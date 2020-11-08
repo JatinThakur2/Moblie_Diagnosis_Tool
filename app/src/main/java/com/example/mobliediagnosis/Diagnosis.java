@@ -1,19 +1,19 @@
 package com.example.mobliediagnosis;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 
 public class Diagnosis extends AppCompatActivity {
 
     private CardView phoneinfo1, battery1, bluetooth1, wifi1, ram1, storage1, cpu1, networkinfo1, fingerprint1, Sensors1,
-            vibrator1, flashlight1, speaker1, rearcamera1, brightness1, multitouch1;
+            vibrator1, flashlight1, speaker1, rearcamera1, brightness1, multitouch1, generatereport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,14 +39,23 @@ public class Diagnosis extends AppCompatActivity {
         rearcamera1 = (CardView) findViewById(R.id.rearcamera);
         brightness1 = (CardView) findViewById(R.id.brightness);
         multitouch1 = (CardView) findViewById(R.id.multitouch);
+        generatereport = (CardView) findViewById(R.id.generatereport);
 
+
+        generatereport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               startActivity(new Intent(Diagnosis.this,GenerateReport.class));
+            }
+        });
 
         phoneinfo1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               startActivity(new Intent(Diagnosis.this,phoneinfo.class));
+                startActivity(new Intent(Diagnosis.this,phoneinfo.class));
             }
         });
+
         battery1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

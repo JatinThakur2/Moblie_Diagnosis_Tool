@@ -8,7 +8,6 @@ import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
-
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;

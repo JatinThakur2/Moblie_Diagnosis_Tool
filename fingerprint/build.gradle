@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'fingerprint'
+
+    publishedGroupId = 'me.aflak.libraries'
+    libraryName = 'Fingerprint'
+    artifact = 'fingerprint'
+
+    libraryDescription = 'Android library that simplifies fingerprint authentications.'
+
+    siteUrl = 'https://github.com/omaraflak/Fingerprint'
+    gitUrl = 'https://github.com/omaraflak/Fingerprint.git'
+
+    libraryVersion = '2.5.3'
+
+    developerId = 'omaflak'
+    developerName = 'Omar Aflak'
+    developerEmail = 'aflakomar@gmail.com'
+
+    licenseName = 'The MIT License'
+    licenseUrl = 'https://opensource.org/licenses/MIT'
+    allLicenses = ["MIT"]
+}
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 27
+        versionCode 37
+        versionName project.ext.libraryVersion
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
+}
+
+apply from: 'https://raw.githubusercontent.com/omaflak/Bintray/master/install.gradle'
+apply from: 'https://raw.githubusercontent.com/omaflak/Bintray/master/bintray.gradle'

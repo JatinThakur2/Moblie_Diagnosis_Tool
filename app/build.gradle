@@ -51,7 +51,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-
+    implementation 'me.aflak.libraries:fingerprint:2.5.3'
     // External dependencies
     // https://github.com/timqi/SectorProgressView
     compile 'com.timqi.sectorprogressview:library:2.0.1'

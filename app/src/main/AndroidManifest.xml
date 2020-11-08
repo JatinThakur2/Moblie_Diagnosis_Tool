@@ -11,6 +11,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.STORAGE" />
 
     <uses-feature android:name="android.hardware.camera.flash" />
 
@@ -26,7 +29,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".gyroscope"></activity>
+        <activity android:name=".GenerateReport"></activity>
+        <activity android:name=".Gravity" />
+        <activity android:name=".gyroscope" />
+        <activity android:name=".SimpleView" />
         <activity
             android:name=".flashlight"
             android:parentActivityName=".Diagnosis" />
@@ -79,7 +85,7 @@
         <activity
             android:name=".proximityActivity"
             android:parentActivityName=".Sensors"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".gps"
             android:parentActivityName=".Sensors"
@@ -87,19 +93,19 @@
         <activity
             android:name=".accelerometerActivity"
             android:parentActivityName=".Sensors"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".lightActivity"
             android:parentActivityName=".Sensors"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".magnetometerActivity"
             android:parentActivityName=".Sensors"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".pressureActivity"
             android:parentActivityName=".Sensors"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity android:name=".Diagnosis" />
         <activity
             android:name=".MainActivity"

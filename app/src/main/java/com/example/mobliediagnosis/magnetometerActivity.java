@@ -2,7 +2,6 @@ package com.example.mobliediagnosis;
 
 
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;

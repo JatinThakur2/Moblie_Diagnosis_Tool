@@ -1,91 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:background="@drawable/bg"
-    tools:context=".speaker"
-    android:orientation="vertical">
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="160dp"
+        android:layout_height="168dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_speaker" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2">
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/animationView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/rocket" />
-
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:lineSpacingExtra="12sp"
-            android:text="SPEAKER"
-            android:textColor="@android:color/widget_edittext_dark"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            android:typeface="serif" />
-
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="167dp"
-            android:layout_height="105dp"
-
-            android:layout_centerHorizontal="true"
-            app:srcCompat="@drawable/ic_baseline_speaker_group_24" />
-
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/idTxtView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
-
-
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <Button
-            android:id="@+id/idBtnStart"
-            android:layout_width="260dp"
-            android:layout_centerHorizontal="true"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_input"
-            android:text="RUN" />
-
-    </RelativeLayout>
-    <Space
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="2" />
-</LinearLayout>
+        android:text="Record"
+        android:background="@drawable/custom_input"
+        android:id="@+id/button"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="37dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STOP"
+        android:background="@drawable/custom_input"
+        android:id="@+id/button2"
+        android:layout_alignTop="@+id/button"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:id="@+id/button3"
+        android:layout_alignTop="@+id/button2"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/custom_input"
+        android:layout_alignParentEnd="true"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STOP PLAYING RECORDING "
+        android:id="@+id/button4"
+        android:background="@drawable/custom_input"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        />
+</RelativeLayout>

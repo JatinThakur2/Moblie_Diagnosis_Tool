@@ -1,32 +1,26 @@
 package com.example.mobliediagnosis;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class fingerprint extends AppCompatActivity {
-    private Button button;
-
-    private TextView showTextView;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fingerprint);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("FINGERPRINT");
-        button= (Button) findViewById(R.id.idBtnStart);
-        showTextView=(TextView) findViewById(R.id.idTxtView);
+        findViewById(R.id.activity_menu_simple_view).setOnClickListener(onView);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showTextView.setText("Test has been successfully done");
-            }
-        });
     }
+
+    private View.OnClickListener onView = new View.OnClickListener() {
+        @Override
+
+        public void onClick(View view) {
+            startActivity(new Intent(fingerprint.this, SimpleView.class));
+        }
+    };
+
 }

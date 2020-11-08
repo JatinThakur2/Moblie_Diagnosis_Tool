@@ -1,10 +1,5 @@
 package com.example.mobliediagnosis;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -23,10 +18,12 @@ import android.os.HandlerThread;
 import android.util.Size;
 import android.view.Surface;
 import android.view.TextureView;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import java.util.Arrays;
 

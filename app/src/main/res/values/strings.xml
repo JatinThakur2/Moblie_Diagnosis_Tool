@@ -92,21 +92,65 @@
     </string>
     <!-- other-->
 
+    <string-array name="Audio_Source">
+        <item>AudioSource.DEFAULT</item>
+        <item>AudioSource.MIC</item>
+        <item>AudioSource.VOICE_UPLINK</item>
+        <item>AudioSource.VOICE_DOWNLINK</item>
+        <item>AudioSource.VOICE_CALL</item>
+        <item>AudioSource.CAMCORDER</item>
+        <item>AudioSource.VOICE_RECOGNITION</item>
+        <item>AudioSource.VOICE_COMMUNICATION</item>
+        <item>AudioSource.REMOTE_SUBMIX</item>
+    </string-array>
+    <string-array name="Audio_Stream">
+        <item>STREAM_VOICE_CALL</item>
+        <item>STREAM_SYSTEM</item>
+        <item>STREAM_RING</item>
+        <item>STREAM_MUSIC</item>
+        <item>STREAM_ALARM</item>
+        <item>STREAM_NOTIFICATION</item>
+    </string-array>
+    <string-array name="Audio_mode">
+        <item>MODE_NORMAL</item>
+        <item>MODE_RINGTONE</item>
+        <item>MODE_IN_CALL</item>
+        <item>MODE_IN_COMMUNICATION</item>
+    </string-array>
+
+
+    <string name="start_recording">Start recording</string>
+    <string name="stop_recording">Stop recording</string>
+    <string name="start_playing">Start playing</string>
+    <string name="stop_playing">Stop playing</string>
 
     <string name="Unavailable_sensors_message">Unavailable sensors will have their buttons disabled</string>
 
     <!-- title text-->
     <string name="proximity_title">Proximity Sensor</string>
     <string name="accelerometer_title">Accelerometer</string>
+    <string name="gyroscope_title">Gyroscope</string>
+    <string name="gravity_title">Gravity</string>
     <string name="light_title">Ambient Light Sensor</string>
     <string name="magnetometer_title">Magnetometer</string>
     <string name="pressure_title">Pressure Sensor</string>
 
     <!-- value text-->
     <string name="proximity_text">Sensor Value: %1$.2f</string>
+
+    <!--    Gravity-->
+    <string name="Gravity_x_value">X Value: %1$.2f</string>
+    <string name="Gravity_y_value">Y Value: %1$.2f</string>
+    <string name="Gravity_z_value">Z Value: %1$.2f</string>
+
     <string name="accelerometer_x_value">X Value: %1$.2f</string>
     <string name="accelerometer_y_value">Y Value: %1$.2f</string>
     <string name="accelerometer_z_value">Z Value: %1$.2f</string>
+
+    <string name="gyroscope_x_value">X Value: %1$.2f</string>
+    <string name="gyroscope_y_value">Y Value: %1$.2f</string>
+    <string name="gyroscope_z_value">Z Value: %1$.2f</string>
+
     <string name="light_text">Sensor Value: %1$.2f</string>
     <string name="magnetometer_x_value">X Value: %1$.2f</string>
     <string name="magnetometer_y_value">Y Value: %1$.2f</string>
@@ -134,7 +178,6 @@
     <string name="sotw_northwest">NW</string>
     <string name="sotw_southeast">SE</string>
     <string name="sotw_southwest">SW</string>
-
 
 
     <string name="sensor_label">Sensor</string>

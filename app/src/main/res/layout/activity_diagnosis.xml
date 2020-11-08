@@ -39,6 +39,27 @@
                 android:textSize="34sp"
                 android:textStyle="bold" />
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/generatereport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/custom_input"
+                android:text="Generate Report"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <TextView
+                    android:layout_width="153dp"
+                    android:layout_height="match_parent"
+                    android:text="Generate Report"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
 
 
         </RelativeLayout>
@@ -81,7 +102,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/ic_baseline_mobile_friendly_24" />
-
                     <TextView
                         android:id="@+id/phoneinfotext"
                         android:layout_width="wrap_content"

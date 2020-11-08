@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fingerprint_state_scanning">Touchez le capteur</string>
+    <string name="fingerprint_state_success">Empreinte reconnue</string>
+    <string name="fingerprint_state_failure">Empreinte non reconnue.\nRéessayez.</string>
+    <string name="fingerprint_cancel">Annuler</string>
+    <string name="fingerprint_use_password">Mot de passe</string>
+    <string name="fingerprint_icon_description">Icône empreinte</string>
+
+    <string name="password_confirm">Confirmer</string>
+    <string name="password_cancel">Annuler</string>
+    <string name="password_incorrect">Mot de passe incorrect</string>
+</resources>

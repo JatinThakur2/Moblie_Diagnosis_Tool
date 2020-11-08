@@ -36,8 +36,14 @@
 
     <TextView
         android:id="@+id/sotw_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/main_image_dial"
+        android:layout_marginBottom="-52dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

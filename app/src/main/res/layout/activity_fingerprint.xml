@@ -49,7 +49,7 @@
             android:id="@+id/imageView"
             android:layout_width="167dp"
             android:layout_height="105dp"
-
+            android:contentDescription="@null"
             android:layout_centerHorizontal="true"
             app:srcCompat="@drawable/ic_baseline_fingerprint_24" />
 
@@ -76,7 +76,7 @@
 
 
         <Button
-            android:id="@+id/idBtnStart"
+            android:id="@+id/activity_menu_simple_view"
             android:layout_width="260dp"
             android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"

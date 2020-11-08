@@ -1,13 +1,14 @@
 package com.example.mobliediagnosis;
 
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class brightness extends AppCompatActivity {
     private static final String SCREEN_BRIGHTNESS_VALUE_PREFIX = "Screen brightness value is ";

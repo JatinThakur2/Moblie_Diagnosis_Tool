@@ -1,22 +1,20 @@
 package com.example.mobliediagnosis;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class Sensors extends AppCompatActivity {
 
 
-    private CardView proximityBtn, accelerometerBtn, lightBtn, GPSBtn, magnetometerBtn, pressureBtn, gyroscopeBtn;
+    private CardView proximityBtn, accelerometerBtn, lightBtn, GPSBtn, magnetometerBtn, pressureBtn, gyroscopeBtn, gravitybtn;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +33,7 @@ public class Sensors extends AppCompatActivity {
         magnetometerBtn = findViewById(R.id.magnetometerBtn);
         pressureBtn = findViewById(R.id.pressureBtn);
         gyroscopeBtn=findViewById(R.id.gyroscopeBtn);
+        gravitybtn=findViewById(R.id.gravitybtn);
 
         //add logic for each sensor where the button is disabled if that specific sensor is
         //not available on the current device. Notice that the GPS does
@@ -137,8 +136,26 @@ public class Sensors extends AppCompatActivity {
         } else {
 
             //disable button if sensor is not available
-            magnetometerBtn.setEnabled(false);
+            gyroscopeBtn.setEnabled(false);
         }
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY) != null) {
+
+            //set listener for button
+            gravitybtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    //add intent that takes use to the sensor's activity if the button pressed
+                    Intent magnetometerIntent = new Intent(Sensors.this, Gravity.class);
+                    startActivity(magnetometerIntent);
+                }
+            });
+        } else {
+
+            //disable button if sensor is not available
+            gravitybtn.setEnabled(false);
+        }
+
         if(sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE) != null) {
 
             //set listener for button

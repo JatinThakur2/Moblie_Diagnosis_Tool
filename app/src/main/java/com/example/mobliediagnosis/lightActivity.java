@@ -10,22 +10,27 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobliediagnosis.database.DBStatic;
+
 public class lightActivity extends AppCompatActivity implements SensorEventListener {
 
     //set instances for the sensorManager, light sensor, and textViews
     private SensorManager sensorManager;
     private Sensor lightSensor;
     private TextView lightSensorText;
-
+    private boolean takeData = true;
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
 
         //retrieve the current value of the light sensor
         float currentValue = sensorEvent.values[0];
-        setTitle("Light Sensor");
 
+
+
+            setTitle("Light Sensor");
         //display the retrieved values onto the textView
         lightSensorText.setText(getResources().getString(R.string.light_text, currentValue));
+
     }
 
     @Override
@@ -43,8 +48,13 @@ public class lightActivity extends AppCompatActivity implements SensorEventListe
         lightSensorText = findViewById(R.id.lightSensorText);
 
         //define instances
-        sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+        if (takeData) {
+            takeData = false;
+            String extra = "Value: " + lightSensorText;
+            DBStatic.insert("Light Sensor Test",extra, getApplicationContext());
+        }
     }
 
     //register the listener once the activity starts

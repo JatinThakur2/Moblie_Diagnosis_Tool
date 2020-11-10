@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-;
+;import com.example.mobliediagnosis.database.DBStatic;
 
 public class gyroscope extends AppCompatActivity implements SensorEventListener {
 
@@ -20,7 +20,7 @@ public class gyroscope extends AppCompatActivity implements SensorEventListener 
     private TextView xValue;
     private TextView yValue;
     private TextView zValue;
-
+    private boolean takeData = true;
     public void onSensorChanged(SensorEvent sensorEvent) {
 
         //get the current values of the accelerometer for each axis
@@ -34,7 +34,16 @@ public class gyroscope extends AppCompatActivity implements SensorEventListener 
         xValue.setText(getResources().getString(R.string.gyroscope_x_value, current_xValue));
         yValue.setText(getResources().getString(R.string.gyroscope_y_value, current_yValue));
         zValue.setText(getResources().getString(R.string.gyroscope_z_value, current_zValue));
+        if (takeData) {
+            takeData = false;
+            String extra = "X: " + sensorEvent.values[0]
+                    + "\nY: " + sensorEvent.values[1]
+                    + "\nZ: " + sensorEvent.values[2];
+            DBStatic.insert("Gyroscope Sensor Test",extra, getApplicationContext());
+        }
     }
+
+
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {

@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobliediagnosis.database.DBStatic;
 import com.timqi.sectorprogressview.SectorProgressView;
 
 public class ram extends AppCompatActivity {
@@ -41,6 +42,10 @@ public class ram extends AppCompatActivity {
 
         System.out.println("()()()() " + availram + " | " + totalram + " | " + usedram);
 
+        String extra = "Total RAM: " + totalram
+                + "\nAvailable RAM: " + availram
+                + "\nUsed RAM: " + usedram;
+        DBStatic.insert("RAM Test", extra, getApplicationContext());
         // just fot the show and debugging
     }
 }

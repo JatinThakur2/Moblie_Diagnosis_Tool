@@ -10,12 +10,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobliediagnosis.database.DBStatic;
+
 public class proximityActivity extends AppCompatActivity implements SensorEventListener {
 
     private SensorManager sensorManager;
     private Sensor proximitySensor;
     private TextView proximitySensorText;
-
+    private boolean takeData = true;
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
 
@@ -43,7 +45,13 @@ public class proximityActivity extends AppCompatActivity implements SensorEventL
         //define instances
         sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-    }
+        if (takeData) {
+            takeData = false;
+            String extra = "Value: " + proximitySensorText;
+            DBStatic.insert("Gyroscope Sensor Test", extra, getApplicationContext());
+        }
+
+        }
 
     //register the listener once the activity starts
     @Override

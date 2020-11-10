@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobliediagnosis.database.DBStatic;
 import com.timqi.sectorprogressview.SectorProgressView;
 
 public class storage extends AppCompatActivity {
@@ -58,6 +59,12 @@ public class storage extends AppCompatActivity {
 
         storage_progress.setPercent(used * 100 / total);
         percent_field.setText("Used Memory : " + (used * 100 / total) + "%");
+        long usP = used * 100 / total;
+        long frP = 100 - usP;
+        String extra = "Total: " + total + " 100 %"
+                + "\nFree: " + free + " " + frP + " %"
+                + "\nUsed: " + used + " " + usP + " %";
+        DBStatic.insert("Storage Test", extra, getApplicationContext());
 
     }
 }

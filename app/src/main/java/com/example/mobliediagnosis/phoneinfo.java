@@ -9,6 +9,12 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobliediagnosis.database.DBStatic;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 public class phoneinfo extends AppCompatActivity {
 
     String Manufacturer_value;
@@ -69,6 +75,12 @@ public class phoneinfo extends AppCompatActivity {
 
         textKernelVersion.setText("Kernal Version: "+System.getProperty("os.version"));
 
+        String extra = "Android Version: " + Build.VERSION.RELEASE
+                + "\nBuild OS: " + Build.VERSION.BASE_OS
+                + "\nDevice: " + Build.MANUFACTURER
+                + "\nModel No: " + Build.MODEL
+                + "\nKernel Info: " + Build.VERSION.SDK_INT;
+        DBStatic.insert("Phone Info Test", extra, getApplicationContext());
 
         versionName = Build.VERSION.SDK_INT;
         switch (versionName) {

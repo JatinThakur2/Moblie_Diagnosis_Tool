@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobliediagnosis.database.DBStatic;
 import com.timqi.sectorprogressview.ColorfulRingProgressView;
 
 import java.util.Timer;
@@ -22,6 +23,7 @@ public class battery extends AppCompatActivity {
     private Intent batteryStatus;
     private TextView charging_type_field, charging_status_field, charging_percentage_view, battery_health_view;
     Context context;
+    private boolean takeData = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,15 @@ public class battery extends AppCompatActivity {
 
         final float batteryPct = level * 100 / (float)scale;
 
+        if (takeData) {
+            takeData = false;
+            String extra = "Percentage: " + batteryPct
+                    + "\nIs Charging: " + isCharging
+                    + "\nUSB Charging: " + usbCharge
+                    + "\nAC Charging: " + acCharge;
+            DBStatic.insert("BatteryTest ", extra, getApplicationContext());
+            System.out.println("()()()()INSERTED INSERTED: " + extra);
+        }
         // How is battery health?
         registerReceiver(new BroadcastReceiver() {
             @Override
